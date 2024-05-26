@@ -5,37 +5,26 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <h1>Ejemplo SQLite</h1>
+    <h1>Directorio</h1>
 
-    <h3>Agregar Película</h3>
-    <form id="movieForm">
-        <label>Id:</label>
-        <input id="movieId" required>
-        <br>
-        <label>Título:</label>
-        <input id="movieTitle" required>
-        <br>
-        <label>Año:</label>
-        <input id="movieYear" required>
-        <br>
-        <label>Puntuación:</label>
-        <input id="movieScore" required>
-        <br>
-        <label>Votos:</label>
-        <input id="movieVotes" required>
-        <br>
-        <button type="submit">Agregar película</button>
+    <h3>Consultar por Película</h3>
+    <form id="viewByMovie">
+        <label>Id de la Película:</label>
+        <input id="movieId" type="number">
+        <p>O prueba con:</p>
+        <label>Nombre de la Película</label>
+        <input id="movieName" type="text">
+        <button type="submit">Buscar</button>
     </form>
 
-    <h3>Agregar Actor</h3>
-    <form id="actorForm">
-        <label>Id:</label>
-        <input id="actorId" required>
-        <br>
-        <label>Nombre:</label>
-        <input id="actorTitle" required>
-        <br>
-        <button type="submit">Agregar Actor</button>
+    <h3>Consultar por Actor</h3>
+    <form id="viewByActor">
+        <label>Id del Actor:</label>
+        <input id="actorId" type="number">
+        <p>O prueba con:</p>
+        <label>Nombre del Actor</label>
+        <input id="actorName" type="text">
+        <button type="submit">Buscar</button>
     </form>
 </body>
 </html>
