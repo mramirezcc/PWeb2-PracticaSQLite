@@ -34,7 +34,7 @@
     </form>
     <br>
     <p id="errorBox"></p>
-    <table></table>
+    <table id="resultTable"></table>
 
     <script>
         function showError(aux){
@@ -54,7 +54,7 @@
             if(movieId != ""){
                 showError(false);
                 console.log("movieId definido: " + movieId);
-                get
+                getByMovieId(movieId);
             }else{
                 showError(true);
             }
@@ -66,6 +66,7 @@
             if(movieName != ""){
                 showError(false);
                 console.log("movieName definido: " + movieName);
+                getByMovieName(movieName);
             }else{
                 showError(true);
             }
@@ -77,6 +78,7 @@
             if(actorId != ""){
                 showError(false);
                 console.log("actorId definido: " + actorId);
+                getByActorId(actorId);
             }else{
                 showError(true);
             }
@@ -88,10 +90,38 @@
             if(actorName != ""){
                 showError(false);
                 console.log("actorName definido: " + actorName);
+                getByActorName(actorName);
             }else{
                 showError(true);
             }
         })
+
+        function getByActorId(actorId){
+            var url = "./directory?actorId=" + actorId;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    var resultTable = document.getElementById("resultTable");
+                    resultTable.innerHTML =
+                        "<tr>" +
+                        "<th>ID de la Película<th>" +
+                        "<th>Título</th>" +
+                        "<th>Año</th>" +
+                        "<th>Puntuación</th>" +
+                        "<th>Votos</th>" +
+                        "<th>Ordinal</th>" +
+                        "</tr>";
+                    data.forEach(function(){
+                        var row = resultTable.insertRow();
+                        row.insertCell(0).textContent = data.movieId;
+                        row.insertCell(0).textContent = data.title;
+                        row.insertCell(0).textContent = data.year;
+                        row.insertCell(0).textContent = data.rating;
+                        row.insertCell(0).textContent = data.votes;
+                        row.insertCell(0).textContent = data.ordinal;
+                    });
+                })
+        }
     </script>
 </body>
 </html>
