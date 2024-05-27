@@ -8,37 +8,64 @@
     <h1>Directorio</h1>
 
     <h3>Consultar por Película</h3>
-    <form id="viewByMovie">
+    <form id="byMovieIdForm">
         <label>Id de la Película:</label>
         <input id="movieId" type="number">
-        <p>O prueba con:</p>
+        <button type="submit">Buscar por ID</button>
+    </form>
+    <p>O prueba con:</p>
+    <form id="byMovieNameForm">
         <label>Nombre de la Película</label>
         <input id="movieName" type="text">
-        <p><button type="submit">Buscar</button></p>
+        <button type="submit">Buscar por nombre</button>
     </form>
 
     <h3>Consultar por Actor</h3>
-    <form id="viewByActor">
+    <form id="byActorIdForm">
         <label>Id del Actor:</label>
         <input id="actorId" type="number">
-        <p>O prueba con:</p>
+        <button type="submit">Buscar por ID</button>
+    </form>
+    <p>O prueba con:</p>
+    <form id="byActorNameForm">
         <label>Nombre del Actor</label>
         <input id="actorName" type="text">
-        <br>
-        <p><button type="submit">Buscar</button></p>
+        <button type="submit">Buscar por nombre</button>
     </form>
+    <br>
     <table></table>
 
     <script>
-        document.getElementById("viewByMovie").addEventListener("submit", event =>{
+        document.getElementById("byMovieIdForm").addEventListener("submit", event =>{
             event.preventDefault();
             var movieId = document.getElementById("movieId").value;
-            var movieName = document.getElementById("movieName").value;
-            if(movieId != undefined){}
+            if(movieId != undefined){
+                console.log("movieId definido: " + movieId);
+            }
         })
 
-        document.getElementById("viewByActor").addEventListener("submit", event =>{
+        document.getElementById("byMovieNameForm").addEventListener("submit", event =>{
             event.preventDefault();
+            var movieName = document.getElementById("movieName").value;
+            if(movieName != undefined){
+                console.log("movieName definido: " + movieName);
+            }
+        })
+
+        document.getElementById("byActorIdForm").addEventListener("submit", event =>{
+            event.preventDefault();
+            var actorId = document.getElementById("actorId").value;
+            if(actorId != undefined){
+                console.log("actorId definido: " + actorId);
+            }
+        })
+
+        document.getElementById("byActorNameForm").addEventListener("submit", event =>{
+            event.preventDefault();
+            var actorName = document.getElementById("actorName").value;
+            if(actorName != undefined){
+                console.log("actorName definido: " + actorName);
+            }
         })
     </script>
 </body>
