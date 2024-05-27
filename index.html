@@ -14,7 +14,7 @@
         <p>O prueba con:</p>
         <label>Nombre de la Película</label>
         <input id="movieName" type="text">
-        <button type="submit">Buscar</button>
+        <p><button type="submit">Buscar</button></p>
     </form>
 
     <h3>Consultar por Actor</h3>
@@ -24,7 +24,22 @@
         <p>O prueba con:</p>
         <label>Nombre del Actor</label>
         <input id="actorName" type="text">
-        <button type="submit">Buscar</button>
+        <br>
+        <p><button type="submit">Buscar</button></p>
     </form>
+    <table></table>
+
+    <script>
+        document.getElementById("viewByMovie").addEventListener("submit", event =>{
+            event.preventDefault();
+            var movieId = document.getElementById("movieId").value;
+            var movieName = document.getElementById("movieName").value;
+            if(movieId != undefined){}
+        })
+
+        document.getElementById("viewByActor").addEventListener("submit", event =>{
+            event.preventDefault();
+        })
+    </script>
 </body>
 </html>
