@@ -33,38 +33,63 @@
         <button type="submit">Buscar por nombre</button>
     </form>
     <br>
+    <p id="errorBox"></p>
     <table></table>
 
     <script>
+        function showError(aux){
+            var errorBox = document.getElementById("errorBox");
+            errorBox.style.backgroundColor = "red";
+            errorBox.style.color = "white";
+            if(aux){
+                errorBox.innerHTML = "Ingrese valores válidos";
+            }else{
+                errorBox.innerHTML = "";
+            }
+            
+        }
+
         document.getElementById("byMovieIdForm").addEventListener("submit", event =>{
             event.preventDefault();
             var movieId = document.getElementById("movieId").value;
-            if(movieId != undefined){
+            if(movieId != ""){
+                showError(false);
                 console.log("movieId definido: " + movieId);
+            }else{
+                showError(true);
             }
         })
 
         document.getElementById("byMovieNameForm").addEventListener("submit", event =>{
             event.preventDefault();
             var movieName = document.getElementById("movieName").value;
-            if(movieName != undefined){
+            if(movieName != ""){
+                showError(false);
                 console.log("movieName definido: " + movieName);
+            }else{
+                showError(true);
             }
         })
 
         document.getElementById("byActorIdForm").addEventListener("submit", event =>{
             event.preventDefault();
             var actorId = document.getElementById("actorId").value;
-            if(actorId != undefined){
+            if(actorId != ""){
+                showError(false);
                 console.log("actorId definido: " + actorId);
+            }else{
+                showError(true);
             }
         })
 
         document.getElementById("byActorNameForm").addEventListener("submit", event =>{
             event.preventDefault();
             var actorName = document.getElementById("actorName").value;
-            if(actorName != undefined){
+            if(actorName != ""){
+                showError(false);
                 console.log("actorName definido: " + actorName);
+            }else{
+                showError(true);
             }
         })
     </script>
